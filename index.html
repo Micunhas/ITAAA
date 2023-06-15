@@ -1,0 +1,149 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<link rel="icon" type="image/x-icon" href="icon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITAAAAAAA</title>
+    <script type="text/javascript">
+      function checkPassword() {
+        var password = document.getElementById("password").value;
+        if (password == "bububu") {
+          document.getElementById("password-form").style.display = "none";
+          document.getElementById("countdown").style.display = "block";
+          startCountdown();
+        } else {
+          alert("Senha incorreta");
+        }
+      }
+		var screenWidth = window.innerWidth;
+		video.setAttribute("width", screenWidth);
+      function startCountdown() {
+        // Define a data de expiração
+        var countDownDate = new Date("Sep 07, 2023 12:00:00").getTime();
+
+        // Atualiza o cronômetro a cada segundo
+        var countdownInterval = setInterval(function() {
+          // Obtém a data e hora atual
+          var now = new Date().getTime();
+
+          // Calcula a distância entre a data de expiração e a data atual
+          var distance = countDownDate - now;
+
+          // Calcula dias, horas, minutos e segundos restantes
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Exibe o resultado na página
+          document.getElementById("countdown-timer").innerHTML = days + "." + hours + "."
+            + minutes + "." + seconds + "";
+
+          // Se a contagem regressiva terminar, exibe uma mensagem
+          if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("countdown-timer").innerHTML = "";
+
+            // Adiciona o elemento de vídeo e configura-o para ser reproduzido
+var video = document.createElement("video");
+video.setAttribute("id", "my-video");
+video.setAttribute("width", "720");
+video.setAttribute("height", "720");
+video.setAttribute("controls", "");
+video.setAttribute("autoplay", "");
+video.setAttribute("src", "video.mp4");
+document.getElementById("countdown").appendChild(video);
+
+var image = document.createElement("img");
+image.setAttribute("id", "my-image");
+image.setAttribute("src", "video.png");
+image.style.maxWidth = "100%";
+image.style.maxHeight = "100%";
+image.style.objectFit = "contain";
+document.getElementById("countdown").appendChild(image);
+          }
+        }, 1000);
+      }
+    </script>
+  </head>
+  <body align="center">
+    <div id="password-form">
+      <h1>:D</h1>
+      <p>digita a senha:</p>
+      <input type="password" id="password">
+      <button onclick="checkPassword()">Entrar</button>
+    </div>
+    <div id="countdown" style="display:none;">
+      <h1></h1>
+      <p></p>
+      <p id="countdown-timer"></p>
+    </div>
+  </body>
+<style>
+      body {
+        background-color: #808080;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+      #password-form, #countdown {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      #password-form h1, #countdown h1 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+      #password-form p, #countdown p {
+        font-size: 16px;
+        margin: 0;
+      }
+      #password-form input[type=password] {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      #password-form button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #countdown-timer {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      #my-video {
+        width: 100%;
+        height: auto;
+      }
+      @media only screen and (max-width: 600px) {
+        #password-form, #countdown {
+          padding: 10px;
+        }
+        #password-form input[type=password] {
+          padding: 5px;
+          font-size: 14px;
+        }
+        #password-form button {
+          padding: 5px;
+          font-size: 14px;
+        }
+        #countdown-timer {
+          font-size: 20px;
+        }
+      }
+    </style>
+</html>
